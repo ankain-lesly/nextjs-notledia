@@ -13,7 +13,7 @@ import { AppLogo } from "@/public";
 import Image from "next/image";
 import Link from "next/link";
 
-export const signUpFields: FormFieldTypes[] = [
+export const registerFields: FormFieldTypes[] = [
   {
     label: "Full name",
     id: "full_name",
@@ -50,15 +50,6 @@ export const signUpFields: FormFieldTypes[] = [
     required: true,
     placeholder: "Password",
   },
-  // {
-  //   label: "Confirm Password",
-  //   id: "confirm-password",
-  //   name: "confirm-password",
-  //   type: "password",
-  //   autoComplete: "confirm-password",
-  //   required: true,
-  //   placeholder: "Confirm Password",
-  // },
 ];
 
 export default function Register() {
@@ -125,7 +116,7 @@ export default function Register() {
                 {/* // Creating Form Inputs */}
                 <Form>
                   <div className="space-y-4">
-                    {signUpFields.map((field, index) => (
+                    {registerFields.map((field, index) => (
                       <FormControlFormik
                         key={index}
                         {...field}

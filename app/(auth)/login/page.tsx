@@ -13,7 +13,7 @@ import { AppLogo } from "@/public";
 import Image from "next/image";
 import Link from "next/link";
 
-export const signUpFields: FormFieldTypes[] = [
+export const loginFields: FormFieldTypes[] = [
   {
     label: "Email address",
     id: "email_address",
@@ -54,14 +54,9 @@ export default function Register() {
 
   // Yup Validation Schema
   const YubSchema = Yup.object({
-    full_name: Yup.string()
-      .required("Your full name is required!")
-      .min(3, "Full name must be at least 5 letters")
-      .max(30, "Full name is too long"),
     email: Yup.string()
       .email("Invalid email address")
       .required("Email address is required!"),
-    phone: Yup.string().required("Phone number is required address"),
     password: Yup.string()
       .required("Your Password is required!")
       .min(4, "Password is too short, Try somethings else!")
@@ -98,7 +93,7 @@ export default function Register() {
                 {/* // Creating Form Inputs */}
                 <Form>
                   <div className="space-y-4">
-                    {signUpFields.map((field, index) => (
+                    {loginFields.map((field, index) => (
                       <FormControlFormik
                         key={index}
                         {...field}
