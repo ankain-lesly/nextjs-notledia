@@ -1,6 +1,5 @@
 import AuthWrapper from "@/components/wrappers/auth-wrapper";
 import type { Metadata } from "next";
-import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "NotLedia | Mange your notes",
@@ -9,9 +8,6 @@ export const metadata: Metadata = {
 };
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
-  const user = false;
-  if (!user) redirect("/login");
-
   return (
     <AuthWrapper>
       <main>

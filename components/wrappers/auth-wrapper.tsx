@@ -1,6 +1,8 @@
+"use client";
+
 import { ReactNode, useEffect, useState } from "react";
 import { useContextProvider } from "../../providers/context-provider";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { isAdmin, isUser } from "@/lib/utils";
 
 interface Props {
@@ -27,17 +29,19 @@ const AuthWrapper = ({ layout: Layout, middleware, children }: Props) => {
     else if (middleware == "admin" && !isAdmin(user.type))
       router.push("/dashboard");
     // toast.error("You are not an admin..."),
-
-    setIsLoaded(true);
+    else setIsLoaded(true);
   }, [user, router, middleware]);
 
-  return isLoaded ? (
+  if (!isLoaded) return null;
+  // (
+  //   <h4 className="text-center p-10 text-sm font-extrabold">Processing..</h4>
+  // );
+
+  return (
     <>
       {Layout && <Layout />}
       {children}
     </>
-  ) : (
-    <h4 className="text-center p-10 text-sm font-extrabold">Processing..</h4>
   );
 };
 
