@@ -89,11 +89,7 @@ export default function Header() {
                 className="ml-2 w-7 md:hidden"
                 title="mobile nav menu"
                 onClick={() => setIsMobileNav((prev) => !prev)}>
-                {isMobileNav ? (
-                  <BiX fontSize={30} className="" />
-                ) : (
-                  <HiBars3 fontSize={26} />
-                )}
+                <HiBars3 fontSize={26} />
                 <span className="sr-only">mobile nav menu</span>
               </button>
             </div>

@@ -22,7 +22,9 @@ export default function Footer() {
               <span className="text-xl font-bold">NotLedia</span>
             </Link>
             <p className="text-light-main/70">
-              Empowering your ideas with AI, one note at a time.
+              Empowering your ideas with AI, one note at a time. Harness the
+              power of AI to create, organize, and share your notes like never
+              before.
             </p>
           </div>
           <div>

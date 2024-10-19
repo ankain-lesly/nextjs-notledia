@@ -55,7 +55,7 @@ export function ThemeHandlerUI() {
           </label>
         </div>
 
-        {isOpen && <ThemeOptions handleClick={handleTheme} />}
+        {isOpen && <ThemeOptions handleClick={handleTheme} curTheme={theme} />}
       </div>
 
       {isOpen && (
@@ -67,8 +67,10 @@ export function ThemeHandlerUI() {
 
 export function ThemeOptions({
   handleClick,
+  curTheme,
 }: {
   handleClick: (text: string) => void;
+  curTheme: string;
 }) {
   return (
     <div className="theme-modal absolute rounded-md border border-dark/5 dark:border-dark/10 overflow-hidden shadow-md bg-light text-dark w-max right-0 translate-y-2 z-50">
@@ -78,7 +80,9 @@ export function ThemeOptions({
             key={i}
             data-theme-mode={theme.value}
             onClick={() => handleClick(theme.value)}
-            className="theme-btn flex items-center gap-4 hover:bg-muted/10 p-2 pr-4 cursor-pointer">
+            className={`theme-btn flex items-center gap-4 hover:bg-muted/10 p-2 pr-4 cursor-pointer ${
+              theme.value == curTheme ? "bg-muted/20" : ""
+            }`}>
             {<theme.icon className="shrink-0" />}{" "}
             <span className="">{theme.label}</span>
           </li>
