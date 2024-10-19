@@ -46,9 +46,7 @@ export default function Header() {
               </p>
             </Link>
 
-            <div
-              className="hidden_
-           md:block nav-menu mr-auto">
+            <div className="hidden md:block nav-menu mr-auto">
               <nav className="hidden md:flex main-nav">
                 <div className="py-4 md:py-0">
                   <ul className="flex flex-col items-center md:flex-row gap-6 px-8 md:p-0 min-w-max">
@@ -88,7 +86,7 @@ export default function Header() {
             <div className="actions flex-center gap-2 md:gap-4">
               <ThemeHandlerUI />
               <button
-                className="ml-2 w-7 md:hidden_"
+                className="ml-2 w-7 md:hidden"
                 title="mobile nav menu"
                 onClick={() => setIsMobileNav((prev) => !prev)}>
                 {isMobileNav ? (

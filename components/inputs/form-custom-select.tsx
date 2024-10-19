@@ -2,6 +2,7 @@ import {
   ChangeEvent,
   MouseEvent,
   ReactNode,
+  useCallback,
   useEffect,
   useRef,
   useState,
@@ -60,23 +61,21 @@ CustomProps) => {
   const inputRef = useRef<HTMLDivElement>(null); // Reference to the custom select input element
   const optionInputRef = useRef<HTMLInputElement>(null); // Reference to the custom select input element
 
-  const loadOptionsData = () => {
-    if (!!optionsList.length) {
+  const loadOptionsData = useCallback(() => {
+    if (optionsList.length) {
       const data: OptionTypes = optionsList.map((value) => ({
         value: value,
         label: value,
       }));
-      // return data;
       setOptionsData(data);
-    } else if (!!options.length) {
-      // return options;
+    } else if (options.length) {
       setOptionsData(options);
     }
-  };
+  }, [optionsList, options]); // Memoizing with dependencies
 
   useEffect(() => {
     loadOptionsData();
-  }, []);
+  }, [loadOptionsData]); // Only include the memoized function
 
   useEffect(() => {
     setSearchValue("");
