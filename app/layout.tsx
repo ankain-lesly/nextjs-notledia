@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import "/public/styles/globals.css";
 import "/public/styles/_fonts.css";
 import SetupProviders from "@/providers/setup-providers";
+import Header from "@/components/menus/header";
+import Footer from "@/components/menus/footer";
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -32,7 +34,11 @@ export default function RootLayout({
         // className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         className={`antialiased`}>
         <SetupProviders>
-          <main className="app">{children}</main>
+          <main className="app">
+            <Header />
+            {children}
+            <Footer />
+          </main>
         </SetupProviders>
       </body>
     </html>
