@@ -1,5 +1,5 @@
 import { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
-import axiosClient from "../lib/axios-client";
+import axiosClient from "./axios-client";
 
 /**
  * Generic API Requests

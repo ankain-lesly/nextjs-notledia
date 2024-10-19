@@ -1,4 +1,4 @@
-import { useContextProvider } from "../../store/context-provider";
+import { useContextProvider } from "../../providers/context-provider";
 
 // Helpers
 import ConfirmModal from "./ui/confirm-modal";

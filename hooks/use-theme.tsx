@@ -1,5 +1,5 @@
 import { getStorage, setStorage } from "@/lib/local-storage";
-import { useContextProvider } from "@/store/context-provider";
+import { useContextProvider } from "@/providers/context-provider";
 import { useEffect } from "react";
 
 export type ThemeTypes = "system" | "light" | "dark";

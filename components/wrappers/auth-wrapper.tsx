@@ -1,5 +1,5 @@
 import { ReactNode, useEffect, useState } from "react";
-import { useContextProvider } from "../../store/context-provider";
+import { useContextProvider } from "../../providers/context-provider";
 import { useRouter } from "next/router";
 import { isAdmin, isUser } from "@/lib/utils";
 

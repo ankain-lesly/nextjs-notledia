@@ -1,7 +1,7 @@
-import { UserAvatar } from "@/public";
+import { AppLogo, UserAvatar } from "@/public";
 import Image from "next/image";
 import Link from "next/link";
-import { BiBrain, BiCheck, BiCheckCircle } from "react-icons/bi";
+import { BiBrain, BiCheck, BiCheckCircle, BiDownload } from "react-icons/bi";
 import { CiShare2 } from "react-icons/ci";
 import { FaAngleDoubleRight } from "react-icons/fa";
 import { FiZap } from "react-icons/fi";
@@ -137,6 +137,57 @@ export default function LandingPage() {
                   className="rounded-full mr-2"
                 />
                 <span>Alex M., Researcher</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mobile App Download Section */}
+      <section id="download" className="py-20 px-6">
+        <div className="container-x">
+          <div className="content text-center flex-center flex-col mb-10">
+            <div className="w-20 mb-4 bg-danger h-1 rounded-full"></div>
+            <p className="uppercase mb-5 lcg_scroll from_scale lcg_animate">
+              Download Now
+            </p>
+            <h2 className="max-w-sm text-[32px] leading-8 lcg_scroll from_bottom lcg_animate">
+              Get Notledia <br className="hidden sm:block" /> on Your Mobile
+              Device
+            </h2>
+          </div>
+
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="md:w-1/2 mb-8 md:mb-0 flex-center">
+              {/* TODO: */}
+              <Image
+                // src="/placeholder.svg?height=600&width=300"
+                src={AppLogo}
+                alt="Notledia mobile app preview"
+                className="rounded-3xl shadow-2xl"
+              />
+            </div>
+            <div className="md:w-1/2 text-center md:text-left">
+              <h3 className="text-2xl font-semibold mb-4">
+                Take Your Notes Anywhere
+              </h3>
+              <p className="text-dark-l mb-8">
+                Access Notledia&apos;s powerful AI-driven note-taking features
+                on the go. Available for both Android and iOS devices.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                <Link
+                  href="/download#android"
+                  className="bg-secondary text-dark py-3 px-6 rounded-full inline-flex items-center justify-center hover:opacity-70 font-bold transition duration-300">
+                  <BiDownload className="mr-2" />
+                  Download for Android
+                </Link>
+                <Link
+                  href="/download#ios"
+                  className="bg-secondary text-dark py-3 px-6 rounded-full inline-flex items-center justify-center hover:opacity-70 font-bold transition duration-300">
+                  <BiDownload className="mr-2" />
+                  Download for iOS
+                </Link>
               </div>
             </div>
           </div>

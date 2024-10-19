@@ -10,7 +10,7 @@ export default function FAQPage() {
             Frequently Asked Questions
           </h1>
           <p className="mb-3 lcg_will_animate from_bottom delay-1 lcg_scroll lcg_animate">
-            Let's build your new experience
+            Let&apos;s build your new experience
           </p>
         </div>
         {/* <div className="absolute h-24 bg-[#fff] -translate-y-20 w-full -bottom-24 rounded-t-[50px]"></div> */}
