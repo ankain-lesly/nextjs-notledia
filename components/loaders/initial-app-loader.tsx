@@ -1,6 +1,9 @@
 // import AppSVGLogo from "../../assets/app-logo";
 // import { AnimatePresence, motion } from "framer-motion";
 
+import { AppLogo } from "@/public";
+import Image from "next/image";
+
 export default function InitialPageLoader() {
   return (
     // <AnimatePresence mode={"wait"}>
@@ -15,8 +18,8 @@ export default function InitialPageLoader() {
     //   >
     <div className="fixed z-[200000] inset-0 bg-dark-l flex-center">
       <div className="flex-center relative">
-        <div className="w-20 h-20 flex-center absolute animate-pulse">
-          {/* <AppSVGLogo type="logo" /> */}
+        <div className="w-10 h-10 flex-center absolute animate-pulse">
+          <Image src={AppLogo} alt="app logo" />
         </div>
         <div
           className="w-24 h-24 rounded-full border-2 border-transparent border-b-muted/50 absolute animate-spin hover:duration-[5s]"

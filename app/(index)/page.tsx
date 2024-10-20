@@ -153,6 +153,7 @@ export default function LandingPage() {
             </p>
             <h2 className="max-w-sm text-[32px] leading-8 lcg_scroll from_bottom lcg_animate">
               Get Notledia <br className="hidden sm:block" /> on Your Mobile
+              Device
             </h2>
           </div>
 
@@ -177,13 +178,13 @@ export default function LandingPage() {
               <div className="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
                 <Link
                   href="/download#android"
-                  className="bg-secondary text-light-main py-3 px-6 rounded-full inline-flex items-center justify-center hover:opacity-70 font-bold transition duration-300">
+                  className="bg-secondary text-dark py-3 px-6 rounded-full inline-flex items-center justify-center hover:opacity-70 font-bold transition duration-300">
                   <BiDownload className="mr-2" />
                   Download for Android
                 </Link>
                 <Link
                   href="/download#ios"
-                  className="bg-secondary text-light-main py-3 px-6 rounded-full inline-flex items-center justify-center hover:opacity-70 font-bold transition duration-300">
+                  className="bg-secondary text-dark py-3 px-6 rounded-full inline-flex items-center justify-center hover:opacity-70 font-bold transition duration-300">
                   <BiDownload className="mr-2" />
                   Download for iOS
                 </Link>
@@ -315,38 +316,13 @@ export default function LandingPage() {
                 </ul>
                 <Link
                   href={"/register?bundle=" + plan.name}
-                  className="bg-primary mt-auto text-light-main py-2 px-6 rounded-full inline-block hover:bg-secondary transition duration-300 font-bold">
+                  className="bg-primary mt-auto text-dark py-2 px-6 rounded-full inline-block hover:bg-secondary transition duration-300 font-bold">
                   Get Started
                 </Link>
               </div>
             ))}
           </div>
         </div>
-      </section>
-
-      {/* Call to Action Section */}
-      <section
-        id="cta"
-        className="section-p bg-hero-driven bg-cover bg-bottom bg-dark-main bg-fixed bg-blend-soft-light text-light-main angle_left_right"
-        style={{ backgroundAttachment: "fixed" }}>
-        <div className="container-x section-p_ md:flex">
-          <div className="right flex-1">
-            <h1 className="text-[32px] md:text-4xl leading-10 font-extrabold md:leading-[4rem] mb-4 lcg_scroll from_scale lcg_animate">
-              Supercharge your
-              <span className="block text-warning">Notes with Notledia?</span>
-            </h1>
-            <p className="max-w-lg mb-8 lcg_scroll from_bottom lcg_animate">
-              Join thousands of users who have transformed their note-taking
-              experience with NotLedia. Start Your NotLedia Journey
-            </p>
-            <Link
-              href="/register?bundle=starter"
-              className="btn btn-danger flex-center gap-2 p-3 md:px-5 rounded-full lcg_will_animate-from_bottom delay-2 w-full sm:max-w-xs lcg_scroll from_bottom lcg_animate">
-              Get Started <BiCheckCircle fontSize={25} />
-            </Link>
-          </div>
-        </div>
-        <div className="left flex-1"></div>
       </section>
 
       {/* FAQ Section */}
@@ -380,7 +356,7 @@ export default function LandingPage() {
                 a: "NotLedia's AI is highly accurate and continuously improving. It's designed to understand context and nuances in various fields.",
               },
             ].map((item, index) => (
-              <div key={index} className="mb-10">
+              <div key={index} className="mb-6">
                 <h3 className="text-xl font-semibold mb-2">{item.q}</h3>
                 <p className="">{item.a}</p>
               </div>
@@ -388,12 +364,37 @@ export default function LandingPage() {
             {/* more */}
             <div className="border border-muted/20 bg-light-d/30 p-6 rounded-lg text-center flex flex-col">
               <p>Still have more queries? visit out faq page</p>
-              <Link href={"/faq"} className="text-primary font-bold">
+              <Link href={"/faq"} className="text-warning font-bold">
                 Read More
               </Link>
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Call to Action Section */}
+      <section
+        id="cta"
+        className="section-p bg-hero-driven bg-cover bg-bottom bg-dark-main bg-fixed bg-blend-soft-light text-light-main angle_left_right"
+        style={{ backgroundAttachment: "fixed" }}>
+        <div className="container-x section-p_ md:flex">
+          <div className="right flex-1">
+            <h1 className="text-[38px] md:text-4xl leading-10 font-extrabold md:leading-[4rem] mb-4 lcg_scroll from_scale lcg_animate">
+              Ready to supercharge your
+              <span className="block text-warning">Notes with Notledia?</span>
+            </h1>
+            <p className="max-w-lg mb-8 lcg_scroll from_bottom lcg_animate">
+              Join thousands of users who have transformed their note-taking
+              experience with NotLedia. Start Your NotLedia Journey
+            </p>
+            <Link
+              href="/register?bundle=starter"
+              className="btn btn-danger flex-center gap-2 px-4 py-4 md:px-5 rounded-full lcg_will_animate-from_bottom delay-2 w-full sm:max-w-xs lcg_scroll from_bottom lcg_animate">
+              Get Started <BiCheckCircle fontSize={25} />
+            </Link>
+          </div>
+        </div>
+        <div className="left flex-1"></div>
       </section>
     </>
   );

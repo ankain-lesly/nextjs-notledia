@@ -36,15 +36,15 @@ function FormControlMin({
   // CODE: JSX
   return (
     <div className="control w-full" data-js={label}>
-      <div className="">
-        {/* Input */}
-        {label && (
-          <label
-            className="capitalize block mb-2 text-sm font-bold"
-            htmlFor={fields.id || fields.name}>
-            {label}
-          </label>
-        )}
+      {/* Input */}
+      {label && (
+        <label
+          className="capitalize block mb-2 text-sm font-bold"
+          htmlFor={fields.id || fields.name}>
+          {label}
+        </label>
+      )}
+      <div className="relative">
         <Input {...{ type, ...fields, variant: "normal" }} />
         {/* Show BTN */}
         {type == "password" && (

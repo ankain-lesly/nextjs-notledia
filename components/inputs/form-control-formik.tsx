@@ -1,7 +1,7 @@
 import { ReactNode, useState } from "react";
 import Input, { InputProps } from "./input";
 import { useField } from "formik";
-import { BsEye, BsEyeSlash } from "react-icons/bs";
+import { BiLock, BiLockOpenAlt } from "react-icons/bi";
 
 export interface FormFieldTypes extends InputProps {
   label?: ReactNode;
@@ -25,26 +25,31 @@ function FormControlFormik({
 
   return (
     <div className="control w-full" data-js={label}>
-      <div className="relative">
+      {/* Label */}
+      {label && (
+        <label
+          className="capitalize block mb-2 text-sm font-bold"
+          htmlFor={fields.name || ""}>
+          {label}
+        </label>
+      )}
+      <div className="relative flex-center">
         {/* Input */}
-        {label && (
-          <label
-            className="capitalize block mb-2 text-sm font-bold"
-            htmlFor={fields.name || ""}>
-            {label}
-          </label>
-        )}
         <Input {...{ type, ...fields, ...others, variant: "normal" }} />
         {/* Show BTN */}
         {inputType == "password" && (
           <button
             type="button"
             title="Toggle private mode"
-            className="text-2xs absolute right-2 bottom-2.5"
+            className="text-2xs absolute right-2"
             onClick={() =>
               setInputType(type === "password" ? "text" : "password")
             }>
-            {type === "password" ? <BsEye /> : <BsEyeSlash />}
+            {type === "password" ? (
+              <BiLock fontSize={22} />
+            ) : (
+              <BiLockOpenAlt fontSize={22} />
+            )}
           </button>
         )}
         {hint && <div className="mt-0.5 text-sm opacity-80">{hint}</div>}

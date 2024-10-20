@@ -135,7 +135,7 @@
   /* ------FORM EL------- */
   .f__input {
     /* @apply rounded-md outline-none w-full px-4 py-2 border-2 border-dark/60 text-dark bg-transparent focus:border-dark focus:shadow-lg; */
-    @apply font-semibold bg-muted/5 border-2 border-dark-l/30 text-sm placeholder:text-muted rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5;
+    @apply font-semibold bg-muted/5 border border-muted/40 text-base placeholder:text-muted rounded-lg block w-full p-3 focus:ring-blue-500 focus:border-blue-500;
   }
 
   .f__input-fill {

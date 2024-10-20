@@ -1,4 +1,4 @@
-import { APP_API_URL } from "@/contacts/app-context";
+import { APP_API_URL } from "@/constants/app-context";
 import { getStorage, removeStorage } from "@/lib/local-storage";
 import axios from "axios";
 

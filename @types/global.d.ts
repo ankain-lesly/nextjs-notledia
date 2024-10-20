@@ -1,4 +1,5 @@
 import { ThemeTypes } from "@/hooks/use-theme";
+import { ReactElement } from "react";
 
 export {};
 
@@ -28,7 +29,7 @@ declare global {
 
   interface ModalPropsSetup {
     closeModal: () => void;
-    children: (props: ModalOptionTypes) => JSX.Element;
+    children: (props: ModalOptionTypes) => ReactElement;
   }
 
   interface ModalPropsMain {
