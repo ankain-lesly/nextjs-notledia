@@ -33,7 +33,7 @@ export default function Header() {
       <header className="sticky top-0 main-header z-30 transition-all duration-300">
         <div
           ref={headerRef}
-          className="absolute top-0 w-full text-light-main border-b border-b-muted/20">
+          className="absolute top-0 w-full text-light-main border-b_border-b-muted/20">
           <div className="container-x h-16 flex items-center justify-end gap-4">
             <Link href="/" className="flex-center gap-2 mr-auto">
               <Image
