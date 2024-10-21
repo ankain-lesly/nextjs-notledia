@@ -76,6 +76,7 @@ module.exports = {
 
       backgroundImage: {
         "hero-driven": "url('/images/hero-bg-oil-filter.jpg')",
+        "mobile-concept": "url('/images/habitatlearn-mobile-concept.jpg')",
       },
       screens: {
         wide: "1440px",

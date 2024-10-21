@@ -81,7 +81,7 @@ export default function Register() {
   });
   return (
     <ScreenWrapper className="bg-light text-dark min-h-screen">
-      <div className="mx-auto max-w-xl">
+      <div className="mx-auto max-w-md">
         {/* Panel Info */}
         <div className="my-8 text-center">
           <div className="flex-center items-center gap-4 mb-4">
@@ -113,7 +113,7 @@ export default function Register() {
               <div className="w-full">
                 {/* // Creating Form Inputs */}
                 <Form>
-                  <div className="space-y-4 mb-4">
+                  <div className="space-y-4 mb-8">
                     {registerFields.map((field, index) => (
                       <FormControlFormik
                         key={index}
@@ -121,6 +121,18 @@ export default function Register() {
                         className="bg-muted/10 p-3 border border-muted/30"
                       />
                     ))}
+                    <div className="flex gap-4 px-4">
+                      <input
+                        type="checkbox"
+                        name="notledia-terms"
+                        id="notledia-terms"
+                        required
+                      />
+                      <label htmlFor="notledia-terms">
+                        By signing up, you agree to our terms of <b>service</b>{" "}
+                        and <b>privacy policy</b>.
+                      </label>
+                    </div>
                   </div>
                   {/* Actions */}
                   <ButtonLoader

@@ -83,7 +83,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Connect</h3>
             <div className="flex space-x-4">
               <Link
-                href="mailto::lesly@letech-cg.com?subject=Contact from Notledia: Connect"
+                href="mailto:lesly@letech-cg.com?subject=Contact from Notledia: Connect"
                 className="text-light-main/70 hover:text-light-main">
                 <CgMail fontSize={24} />
               </Link>

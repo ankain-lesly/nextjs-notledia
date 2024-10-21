@@ -12,6 +12,7 @@
     --hsl-clr-primary: 221, 83%, 53%;
     --hsl-clr-secondary: 271, 81%, 56%;
     --hsl-clr-success: 136, 90%, 52%;
+    --hsl-clr-dark-stream: 240, 42%, 30%;
 
     --hsl-clr-muted: 213, 16%, 56%;
 
@@ -221,3 +222,12 @@
 .blue_gradient {
   @apply bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent;
 }
+
+.bg-radial-bs {
+    box-shadow: 
+      0 0 55px 80px hsl(var(--hsl-clr-secondary)),
+      0 0 410px 30px hsl(var(--hsl-clr-secondary)),
+      0 0 420px 20px hsl(var(--hsl-clr-secondary)),
+      0 0 440px hsl(var(--hsl-clr-secondary)),
+      0 0 580px hsl(var(--hsl-clr-secondary));
+  }

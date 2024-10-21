@@ -31,7 +31,9 @@ export default function Header() {
   return (
     <>
       <header className="sticky top-0 main-header z-30 transition-all duration-300">
-        <div ref={headerRef} className="absolute top-0 w-full text-light-main">
+        <div
+          ref={headerRef}
+          className="absolute top-0 w-full text-light-main border-b border-b-muted/20">
           <div className="container-x h-16 flex items-center justify-end gap-4">
             <Link href="/" className="flex-center gap-2 mr-auto">
               <Image
@@ -85,8 +87,15 @@ export default function Header() {
 
             <div className="actions flex-center gap-2 md:gap-4">
               <ThemeHandlerUI />
+              <Link
+                href={"/register"}
+                className="hidden md:inline-block btn btn-danger font-bold rounded-full p-2.5 px-4"
+                title="mobile nav menu">
+                Sign Up
+                <span className="sr-only">sign up now</span>
+              </Link>
               <button
-                className="ml-2 w-7 md:hidden"
+                className="md:hidden"
                 title="mobile nav menu"
                 onClick={() => setIsMobileNav((prev) => !prev)}>
                 <HiBars3 fontSize={26} />

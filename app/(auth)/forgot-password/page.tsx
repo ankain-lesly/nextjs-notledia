@@ -30,7 +30,7 @@ export default function ForgotPassword() {
   });
   return (
     <ScreenWrapper className="bg-light text-dark min-h-screen flex-center">
-      <div className="mx-auto max-w-xl">
+      <div className="mx-auto max-w-md">
         {/* Panel Info */}
         <div className="my-8 text-center">
           <div className="flex-center items-center gap-4 mb-4">
@@ -57,7 +57,7 @@ export default function ForgotPassword() {
               <div className="w-full">
                 {/* // Creating Form Inputs */}
                 <Form>
-                  <div className="space-y-4 mb-4">
+                  <div className="space-y-4 mb-8">
                     <FormControlFormik
                       label="Email address"
                       id="email_address"

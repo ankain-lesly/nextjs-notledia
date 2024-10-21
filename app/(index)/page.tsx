@@ -1,7 +1,9 @@
-import { AppLogo, UserAvatar } from "@/public";
+import { NotlediaUIImage, UserAvatar } from "@/public";
 import Image from "next/image";
 import Link from "next/link";
 import { BiBrain, BiCheck, BiCheckCircle, BiDownload } from "react-icons/bi";
+import { BsShieldCheck, BsStars, BsTools } from "react-icons/bs";
+import { CgBulb } from "react-icons/cg";
 import { CiShare2 } from "react-icons/ci";
 import { FaAngleDoubleRight } from "react-icons/fa";
 import { FiZap } from "react-icons/fi";
@@ -32,7 +34,7 @@ export default function LandingPage() {
                   Harness the power of AI to create, organize, and share your
                   notes like never before. NotLedia provides and intuitive
                   platform for notes taking with a super cool{" "}
-                  <Link href={"/download"} className="text-primary font-bold">
+                  <Link href={"/download"} className="text-muted font-bold">
                     mobile app
                   </Link>{" "}
                   for Android and IOS users
@@ -56,12 +58,18 @@ export default function LandingPage() {
         <div className="container-x">
           <div className="content text-center flex-center flex-col mb-4">
             <div className="w-20 mb-4 bg-danger h-1 rounded-full"></div>
-            <p className="uppercase mb-5 lcg_scroll from_scale lcg_animate">
+            {/* <p className="uppercase mb-5 lcg_scroll from_scale lcg_animate">
               NotLedia&apos;s Side View
-            </p>
+            </p> */}
             <h2 className="max-w-sm text-[32px] leading-8 lcg_scroll from_bottom lcg_animate">
               Our AI-Powered <br /> Features
             </h2>
+
+            <p className="my-8 mx-auto max-w-lg">
+              NotLedia helps you organize and manage your notes effortlessly.
+              Perfect for students, professionals, and anyone who needs to keep
+              track of important information.
+            </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -148,12 +156,12 @@ export default function LandingPage() {
         <div className="container-x">
           <div className="content text-center flex-center flex-col mb-10">
             <div className="w-20 mb-4 bg-danger h-1 rounded-full"></div>
-            <p className="uppercase mb-5 lcg_scroll from_scale lcg_animate">
+            {/* <p className="uppercase mb-5 lcg_scroll from_scale lcg_animate">
               Download Now
-            </p>
+            </p> */}
             <h2 className="max-w-sm text-[32px] leading-8 lcg_scroll from_bottom lcg_animate">
-              Get Notledia <br className="hidden sm:block" /> on Your Mobile
-              Device
+              Get Notledia <br className="hidden sm:block" /> on your mobile
+              {/* Device */}
             </h2>
           </div>
 
@@ -161,8 +169,7 @@ export default function LandingPage() {
             <div className="md:w-1/2 mb-8 md:mb-0 flex-center">
               {/* TODO: */}
               <Image
-                // src="/placeholder.svg?height=600&width=300"
-                src={AppLogo}
+                src={NotlediaUIImage}
                 alt="Notledia mobile app preview"
                 className="rounded-3xl shadow-2xl"
               />
@@ -178,13 +185,13 @@ export default function LandingPage() {
               <div className="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
                 <Link
                   href="/download#android"
-                  className="bg-secondary text-dark py-3 px-6 rounded-full inline-flex items-center justify-center hover:opacity-70 font-bold transition duration-300">
+                  className="btn btn-danger py-3 px-6 rounded-full inline-flex items-center justify-center hover:opacity-70 font-bold transition duration-300">
                   <BiDownload className="mr-2" />
                   Download for Android
                 </Link>
                 <Link
                   href="/download#ios"
-                  className="bg-secondary text-dark py-3 px-6 rounded-full inline-flex items-center justify-center hover:opacity-70 font-bold transition duration-300">
+                  className="btn btn-danger py-3 px-6 rounded-full inline-flex items-center justify-center hover:opacity-70 font-bold transition duration-300">
                   <BiDownload className="mr-2" />
                   Download for iOS
                 </Link>
@@ -195,8 +202,8 @@ export default function LandingPage() {
       </section>
 
       {/* How It Works Section */}
-      <section id="how-it-works" className="section-p bg-light-d">
-        <div className="container-x">
+      <section id="how-it-works" className="section-p relative bg-light-d">
+        <div className="container-x relative">
           <div className="content text-center flex-center flex-col mb-10">
             <div className="w-20 mb-4 bg-danger h-1 rounded-full"></div>
             <p className="uppercase mb-5 lcg_scroll from_scale lcg_animate">
@@ -207,52 +214,68 @@ export default function LandingPage() {
             </h2>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-2">
-            {[
-              {
-                step: 1,
-                title: "Input Your Thoughts",
-                description:
-                  "Jot down your ideas or upload existing notes to NotLedia",
-              },
-              {
-                step: 2,
-                title: "AI Processing",
-                description: "NotLedia's AI analyzes and structures your input",
-              },
-              {
-                step: 3,
-                title: "Enhanced Output",
-                description:
-                  "Receive organized, enriched notes with NotLedia's insights",
-              },
-              {
-                step: 4,
-                title: "Smart Sharing",
-                description:
-                  "NotLedia's AI suggests relevant collaborators and sharing options",
-              },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="flex flex-col gap-3 border border-dark/30 bg-light-d/20 rounded-3xl p-6 md:p-8">
-                <div className="bg-danger text-dark rounded-3xl size-12 flex items-center justify-center font-bold text-xl">
-                  {item.step}
+          <div className="relative">
+            {/* Grid Gradient */}
+            <div className="absolute h-[250px] md:h-[100px] w-full flex-center left-0 top-28">
+              <div className="bg-radial-bs bg-secondary opacity-80 w-full max-w-md h-20 rounded-full lcg_scroll from_Scale"></div>
+            </div>
+            <div className="block sm:hidden absolute h-[750px] w-full flex-center left-0 top-1/3">
+              <div className="bg-radial-bs bg-secondary w-full max-w-xs opacity-80 h-20 rounded-full lcg_scroll delay-3 from_Scale"></div>
+            </div>
+            {/* Grid Gradient Ends */}
+            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 relative">
+              {[
+                {
+                  step: 1,
+                  icon: CgBulb,
+                  title: "Input Your Thoughts",
+                  description:
+                    "Quickly jot down your thoughts or effortlessly upload existing documents to NotLedia for easy access, processing, organization and shearing.",
+                },
+                {
+                  step: 2,
+                  icon: BsTools,
+                  title: "AI Processing",
+                  description:
+                    "NotLedia’s intelligent AI swiftly analyzes your entries, transforming raw ideas into well-structured, actionable insights tailored to your needs.",
+                },
+                {
+                  step: 3,
+                  icon: BsStars,
+                  title: "Enhanced Output",
+                  description:
+                    "Receive detailed, enriched notes based on your input, complete with contextual insights and suggestions for improved clarity and usability.",
+                },
+                {
+                  step: 4,
+                  icon: BsShieldCheck,
+                  title: "Smart Sharing",
+                  description:
+                    "Easily connect with relevant collaborators as NotLedia’s AI recommends sharing options, enhancing teamwork and productivity effortlessly.",
+                },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="lcg_scroll from_bottom_scale w-full xs:w-auto bg-light-dd text-dark flex-1 shadow-bs p-6 rounded-2xl delay-min delay-0">
+                  {<item.icon fontSize={32} className="text-warning" />}
+                  <h4 className="my-3 font-bold">{item.title}</h4>
+                  <p className="">{item.description}</p>
                 </div>
-                <h3 className="text-xl font-semibold">{item.title}</h3>
-                <p className="text-dark-l">{item.description}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-          <div className="mt-12 text-center border rounded-lg py-12 px-4 hidden">
-            <h2 className="text-muted text-2xl">Feature Outline Map</h2>
-            {/* <Image
-              src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-              alt="NotLedia AI-powered note-taking process"
-              width={1000}
-              height={600}
-              className="rounded-lg shadow-2xl inline-block"
-            /> */}
+
+          <div className="mt-12 text-center py-12 px-4 space-y-4">
+            <h5>Pro Tip For You</h5>
+            <p className="max-w-md mx-auto">
+              Notledia&apos;s workspace make you keep things tidy and need like
+              a pro. Try out our options..
+            </p>
+            <Link
+              href={"/download"}
+              className="btn btn-danger py-3 px-4 rounded-full font-bold">
+              Download Our App
+            </Link>
           </div>
         </div>
       </section>
@@ -316,7 +339,7 @@ export default function LandingPage() {
                 </ul>
                 <Link
                   href={"/register?bundle=" + plan.name}
-                  className="bg-primary mt-auto text-dark py-2 px-6 rounded-full inline-block hover:bg-secondary transition duration-300 font-bold">
+                  className="bg-primary mt-auto text-light-main py-2 px-6 rounded-full inline-block hover:bg-secondary transition duration-300 font-bold">
                   Get Started
                 </Link>
               </div>
@@ -325,6 +348,30 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Call to Action Section */}
+      <section
+        id="cta"
+        className="section-p bg-mobile-concept bg-cover bg-bottom bg-dark-main bg-fixed bg-blend-soft-light text-light-main angle_left_right"
+        style={{ backgroundAttachment: "fixed" }}>
+        <div className="container-x section-p md:flex">
+          <div className="right flex-1">
+            <h1 className="text-[32px] md:text-4xl leading-10 font-extrabold md:leading-[4rem] mb-4 lcg_scroll from_scale lcg_animate">
+              Supercharge your
+              <span className="block text-warning">Notes with Notledia?</span>
+            </h1>
+            <p className="max-w-lg mb-8 lcg_scroll from_bottom lcg_animate">
+              Join thousands of users who have transformed their note-taking
+              experience with NotLedia. Start Your NotLedia Journey
+            </p>
+            <Link
+              href="/register?bundle=starter"
+              className="btn btn-danger flex-center gap-2 px-4 py-4 md:px-5 rounded-full lcg_will_animate-from_bottom delay-2 w-full sm:max-w-xs lcg_scroll from_bottom lcg_animate">
+              Get Started <BiCheckCircle fontSize={25} />
+            </Link>
+          </div>
+        </div>
+        <div className="left flex-1"></div>
+      </section>
       {/* FAQ Section */}
       <section id="faq" className="section-p bg-light">
         <div className="container-x">
@@ -364,37 +411,12 @@ export default function LandingPage() {
             {/* more */}
             <div className="border border-muted/20 bg-light-d/30 p-6 rounded-lg text-center flex flex-col">
               <p>Still have more queries? visit out faq page</p>
-              <Link href={"/faq"} className="text-warning font-bold">
+              <Link href={"/faq"} className="text-secondary font-bold">
                 Read More
               </Link>
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Call to Action Section */}
-      <section
-        id="cta"
-        className="section-p bg-hero-driven bg-cover bg-bottom bg-dark-main bg-fixed bg-blend-soft-light text-light-main angle_left_right"
-        style={{ backgroundAttachment: "fixed" }}>
-        <div className="container-x section-p_ md:flex">
-          <div className="right flex-1">
-            <h1 className="text-[38px] md:text-4xl leading-10 font-extrabold md:leading-[4rem] mb-4 lcg_scroll from_scale lcg_animate">
-              Ready to supercharge your
-              <span className="block text-warning">Notes with Notledia?</span>
-            </h1>
-            <p className="max-w-lg mb-8 lcg_scroll from_bottom lcg_animate">
-              Join thousands of users who have transformed their note-taking
-              experience with NotLedia. Start Your NotLedia Journey
-            </p>
-            <Link
-              href="/register?bundle=starter"
-              className="btn btn-danger flex-center gap-2 px-4 py-4 md:px-5 rounded-full lcg_will_animate-from_bottom delay-2 w-full sm:max-w-xs lcg_scroll from_bottom lcg_animate">
-              Get Started <BiCheckCircle fontSize={25} />
-            </Link>
-          </div>
-        </div>
-        <div className="left flex-1"></div>
       </section>
     </>
   );

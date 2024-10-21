@@ -16,7 +16,6 @@ import { Analytics } from "@vercel/analytics/react";
 //   variable: "--font-geist-mono",
 //   weight: "100 900",
 // });
-
 export const metadata: Metadata = {
   title: {
     default: "NotLedia App",
