@@ -31,17 +31,10 @@ export default function Header() {
   return (
     <>
       <header className="sticky top-0 main-header z-30 transition-all duration-300">
-        <div
-          ref={headerRef}
-          className="absolute top-0 w-full text-light-main border-b_border-b-muted/20">
+        <div ref={headerRef} className="absolute top-0 w-full text-light-main">
           <div className="container-x h-16 flex items-center justify-end gap-4">
             <Link href="/" className="flex-center gap-2 mr-auto">
-              <Image
-                // src="/assets/images/app_logo.png"
-                src={AppLogo}
-                alt="NotLedia"
-                height="45"
-              />
+              <Image src={AppLogo} alt="NotLedia" height="45" />
               <p className="hidden__sm:block font-krona text-[12px] leading-[15px]">
                 <span className="block">NotLedia</span>
                 <b className="block text-blue-400">Notebook</b>
@@ -152,6 +145,21 @@ export default function Header() {
                 <li>
                   <Link href="/faq" className="font-bold hover:opacity-70">
                     Top FAQ
+                  </Link>
+                </li>
+                <li className="border-b border-b-muted/20"></li>
+                <li>
+                  <Link
+                    href="/register"
+                    className="btn btn-danger text-light-main rounded-full p-3 w-full font-bold hover:opacity-70">
+                    Sign Up
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/login"
+                    className="btn btn-primary text-light-main rounded-full p-3 w-full font-bold hover:opacity-70">
+                    Log In
                   </Link>
                 </li>
               </ul>
