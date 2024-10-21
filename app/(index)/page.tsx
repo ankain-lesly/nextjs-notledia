@@ -273,7 +273,7 @@ export default function LandingPage() {
             </p>
             <Link
               href={"/download"}
-              className="btn btn-danger py-3 px-4 rounded-full font-bold">
+              className="btn btn-danger text-light-main py-3 px-4 rounded-full font-bold">
               Download Our App
             </Link>
           </div>

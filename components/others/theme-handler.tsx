@@ -23,7 +23,12 @@ export const themeLabels = [
   },
 ];
 
-export function ThemeHandlerUI() {
+type PositionTypes = "top" | "bottom";
+
+interface Props {
+  menuPosition?: PositionTypes;
+}
+export function ThemeHandlerUI({ menuPosition = "bottom" }: Props) {
   const [isOpen, setIsOpen] = useState(false);
   const { theme, setTheme } = useTheme();
 
@@ -55,7 +60,13 @@ export function ThemeHandlerUI() {
           </label>
         </div>
 
-        {isOpen && <ThemeOptions handleClick={handleTheme} curTheme={theme} />}
+        {isOpen && (
+          <ThemeOptions
+            position={menuPosition}
+            handleClick={handleTheme}
+            curTheme={theme}
+          />
+        )}
       </div>
 
       {isOpen && (
@@ -65,15 +76,21 @@ export function ThemeHandlerUI() {
   );
 }
 
+interface MenuProps {
+  handleClick: (text: string) => void;
+  curTheme: string;
+  position: PositionTypes;
+}
 export function ThemeOptions({
   handleClick,
   curTheme,
-}: {
-  handleClick: (text: string) => void;
-  curTheme: string;
-}) {
+  position = "bottom",
+}: MenuProps) {
   return (
-    <div className="theme-modal absolute rounded-md border border-dark/5 dark:border-dark/10 overflow-hidden shadow-md bg-light text-dark w-max right-0 translate-y-2 z-50">
+    <div
+      className={`theme-modal absolute rounded-md border border-dark/5 dark:border-dark/10 overflow-hidden shadow-md bg-light text-dark w-max right-0 translate-y-2 z-50 ${
+        position == "top" ? "bottom-14" : ""
+      }`}>
       <ul data-target="theme_toggler" className="">
         {themeLabels.map((theme, i) => (
           <li

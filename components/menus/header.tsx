@@ -28,6 +28,10 @@ export default function Header() {
       document.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const handleThemeClick = (e: any) => {
+    e.stopPropagation();
+  };
   return (
     <>
       <header className="sticky top-0 main-header z-30 transition-all duration-300">
@@ -163,6 +167,12 @@ export default function Header() {
                   </Link>
                 </li>
               </ul>
+              <div
+                onClick={handleThemeClick}
+                className="mt-auto px-4 flex-center gap-4 border border-muted/20 shadow-md p-2 rounded-full mx-4 bg-light">
+                <b>Theme</b>
+                <ThemeHandlerUI menuPosition={"top"} />
+              </div>
               <p className="text-center text-muted mt-8 font-mono">
                 NotLedia <br /> Copyright &copy; 2024
               </p>
